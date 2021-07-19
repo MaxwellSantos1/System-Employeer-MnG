@@ -1,0 +1,39 @@
+<h3><a class="btn btn-secondary" href="/employee">
+<i class="fa fa-plus"></i> Criar Novo</a> Lista de Empregados</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nome Completo</th>
+            <th>Email</th>
+            <th>Celular</th>
+            <th>Cidade</th>
+            <th>Salário</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td> {{this.salary}}</td>
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Você tem certeza que deseja deletar as informações do usuário?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/exibirInformacoes/{{this._id}}"> <i class="fa fa-bars" aria-hidden="true"></i> </a>
+            </td>
+        </tr>
+                
+        <tr>
+
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<div>
+<a class="glyphicon glyphicon-log-out" = href="/employee/logout"><i></i> Logout</a>
+</div>
